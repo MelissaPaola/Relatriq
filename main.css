@@ -1,5 +1,146 @@
-:root {
-    margin: 0px;
-    padding: 0px;
+/* Tira os espaços padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+/* Fonte e cor de fundo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef1fb;
+    display: flex;
+}
+
+/* Menu lateral */
+.menu {
+    width: 220px;
+    min-height: 100vh;
+    background-color: #0f1555;
+    color: white;
+    padding: 20px;
+}
+
+.logo {
+    margin-bottom: 30px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: 8px;
+}
+
+.menu a {
+    display: block;
+    color: #c9cef5;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.menu a:hover {
+    background-color: #1f2a8a;
+}
+
+.menu a.ativo {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+/* Área do conteúdo */
+.conteudo {
+    flex: 1;
+    padding: 30px;
+}
+
+.subtitulo {
+    color: #6b7194;
+    margin-bottom: 20px;
+}
+
+/* Caixa branca */
+.caixa {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* Cabeçalho de página */
+.topo-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.botao {
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botao:hover {
+    opacity: 0.85;
+}
+
+.botao-claro {
+    background-color: white;
+    color: #111a3a;
+    border: 1px solid #e1e5f5;
+}
+
+.grupo-botoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    color: #6b7194;
+    font-size: 13px;
+    padding: 10px;
+    border-bottom: 1px solid #e1e5f5;
+}
+
+td {
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #eef1fb;
+}
+
+.status {
+    background-color: #d7f5e3;
+    color: #15803d;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.sucesso {
+    color: #15803d;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #e1e5f5;
+    border-radius: 8px;
+    background-color: white;
 }

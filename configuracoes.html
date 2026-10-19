@@ -1,26 +1,50 @@
 <!DOCTYPE html>
-<html lang="PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Relatriq - Configurações</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="configuracoes.css">
 </head>
-<body>
-  <nav class="navInicial">
-    <a href="inicio.html">Início</a>
-    <a href="planilhas.html">Planilhas</a>
-    <a href="limpeza.html">Ferramentas de limpeza</a>
-    <a href="tarefas.html">Tarefas</a>
-    <a href="relatorio.html">Relatórios</a>
-    <a href="exportar.html">Exportar</a>
-    <a href="configuracoes.html">Configurações</a>
-  </nav>
 
-  <main>
-    <!-- conteúdo da página -->
-  </main>
-    <script src="main.js"></script>
-  <script src="planilhas.js"></script>
-</body>
+<body>
+
+    <aside class="menu">
+        <h2 class="logo">Relatriq</h2>
+        <ul>
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="planilhas.html">Planilhas</a></li>
+            <li><a href="limpeza.html">Ferramentas de limpeza</a></li>
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="exportar.html">Exportar</a></li>
+            <li><a href="configuracoes.html" class="ativo">Configurações</a></li>
+        </ul>
+    </aside>
+
+    <main class="conteudo">
+
+        <h1>Configurações</h1>
+        <p class="subtitulo">Personalize o painel.</p>
+
+        <div class="caixa">
+            <h2>Preferências</h2>
+
+            <div class="opcao">
+                <label for="tema">Tema escuro</label>
+                <input type="checkbox" id="tema">
+            </div>
+
+            <div class="opcao">
+                <label for="idioma">Idioma</label>
+                <select id="idioma">
+                    <option>Português (Brasil)</option>
+                    <option>English</option>
+                </select>
+            </div>
+        </div>
+
+    </main>
+
 </body>
 </html>
