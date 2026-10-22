@@ -10,23 +10,190 @@
 
 <body>
 
+    <!-- Menu lateral (o link "ativo" fica roxo) -->
     <aside class="menu">
         <h2 class="logo">Relatriq</h2>
         <ul>
-         <li><a href="inicio.html">Início</a></li>
-<li><a href="planilhas.html" class="ativo">Planilhas</a></li>
-<li><a href="limpeza.html">Ferramentas de limpeza</a></li>
-<li><a href="relatorio.html">Relatórios</a></li>
-<li><a href="exportar.html">Exportar</a></li>
-<li><a href="configuracoes.html">Configurações</a></li>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="planilhas.html" class="ativo">Planilhas</a></li>
+            <li><a href="limpeza.html">Ferramentas de limpeza</a></li>
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="exportar.html">Exportar</a></li>
+            <li><a href="configuracoes.html">Configurações</a></li>
         </ul>
     </aside>
 
     <main class="conteudo">
 
-        <!-- COLE AQUI O CONTEÚDO DE CADA PÁGINA (abaixo) -->
+        <!-- ========== 1. CABEÇALHO DA PÁGINA ========== -->
+        <section class="cabecalho-planilhas">
 
+            <!-- Lado esquerdo: ícone + título -->
+            <div class="titulo-area">
+                <div class="icone-excel">X</div>
+                <div>
+                    <span class="etiqueta">PLANILHAS</span>
+                    <h1>Trabalhe com suas planilhas</h1>
+                    <p class="subtitulo">Conecte seus arquivos do Excel, organize seus dados e crie relatórios de forma rápida e simples.</p>
+                </div>
+            </div>
+
+            <!-- Lado direito: caixa de dica -->
+            <div class="dica">
+                <strong>💡 Dica rápida</strong>
+                <p>Você pode importar diferentes planilhas e criar relatórios personalizados a partir dos seus dados.</p>
+            </div>
+
+        </section>
+
+        <!-- ========== 2. COMO CRIAR UM RELATÓRIO (4 passos) ========== -->
+        <section class="caixa">
+            <h2>Como criar um relatório</h2>
+
+            <div class="passos">
+
+                <div class="passo">
+                    <span class="numero">1</span>
+                    <h3>Importe a planilha</h3>
+                    <p>Envie seu arquivo do Excel (.xlsx ou .xls).</p>
+                </div>
+
+                <span class="seta">→</span>
+
+                <div class="passo">
+                    <span class="numero">2</span>
+                    <h3>Verifique os dados</h3>
+                    <p>Confira se as informações estão corretas e organizadas.</p>
+                </div>
+
+                <span class="seta">→</span>
+
+                <div class="passo">
+                    <span class="numero">3</span>
+                    <h3>Escolha o tipo de relatório</h3>
+                    <p>Selecione o modelo ou personalize o que precisa.</p>
+                </div>
+
+                <span class="seta">→</span>
+
+                <div class="passo">
+                    <span class="numero">4</span>
+                    <h3>Gere e visualize</h3>
+                    <p>Seu relatório estará pronto para uso ou para exportação.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== 3. PARTE DE BAIXO: MODELOS (esquerda) + IMPORTAR (direita) ========== -->
+        <section class="area-baixo">
+
+            <!-- ----- Coluna da esquerda: modelos de relatório ----- -->
+            <div class="caixa coluna-modelos">
+
+                <div class="titulo-modelos">
+                    <h2>Modelos de relatório</h2>
+                    <a href="#" class="link-roxo">Ver todos os modelos →</a>
+                </div>
+
+                <div class="lista-modelos">
+
+                    <div class="modelo">
+                        <div class="icone-modelo roxo">📊</div>
+                        <h3>Relatório de Vendas</h3>
+                        <p>Análise de vendas por período, produto ou categoria.</p>
+                        <button class="botao botao-claro">Usar modelo</button>
+                    </div>
+
+                    <div class="modelo">
+                        <div class="icone-modelo verde">👤</div>
+                        <h3>Controle de Estoque</h3>
+                        <p>Acompanhe o estoque atual, entradas e saídas.</p>
+                        <button class="botao botao-claro">Usar modelo</button>
+                    </div>
+
+                    <div class="modelo">
+                        <div class="icone-modelo laranja">💰</div>
+                        <h3>Relatório Financeiro</h3>
+                        <p>Resumo de receitas, despesas e lucro.</p>
+                        <button class="botao botao-claro">Usar modelo</button>
+                    </div>
+
+                    <div class="modelo">
+                        <div class="icone-modelo roxo">📈</div>
+                        <h3>Análise de Desempenho</h3>
+                        <p>Indicadores e gráficos para melhor tomada de decisão.</p>
+                        <button class="botao botao-claro">Usar modelo</button>
+                    </div>
+
+                    <div class="modelo">
+                        <div class="icone-modelo azul">📅</div>
+                        <h3>Relatório de Clientes</h3>
+                        <p>Base de clientes, contatos e histórico.</p>
+                        <button class="botao botao-claro">Usar modelo</button>
+                    </div>
+
+                    <div class="modelo">
+                        <div class="icone-modelo verde">📄</div>
+                        <h3>Relatório Personalizado</h3>
+                        <p>Crie seu próprio modelo de relatório.</p>
+                        <button class="botao botao-claro">Criar do zero</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ----- Coluna da direita: importar + recentes ----- -->
+            <div class="coluna-direita">
+
+                <!-- Importar planilha -->
+                <div class="caixa">
+                    <h2>Importar planilha</h2>
+                    <p class="subtitulo">Envie seu arquivo do Excel para começar.</p>
+
+                    <div class="area-upload" id="areaUpload">
+                        <p>☁️</p>
+                        <p><b>Arraste o arquivo aqui</b></p>
+                        <p class="link-roxo">ou clique para selecionar</p>
+                        <small>Formatos aceitos: .xlsx, .xls</small>
+                    </div>
+
+                    <!-- O input fica escondido; o label funciona como botão -->
+                    <input type="file" id="arquivo" accept=".xlsx, .xls" hidden>
+                    <label for="arquivo" class="botao botao-grande">Selecionar arquivo</label>
+<p id="mensagem"></p>
+                </div>
+
+                <!-- Planilhas recentes -->
+                <div class="caixa">
+                    <div class="titulo-modelos">
+                        <h2>Planilhas recentes</h2>
+                        <a href="#" class="link-roxo">Ver todas →</a>
+                    </div>
+
+                    <div class="caixa">
+    <div class="titulo-modelos">
+        <h2>Planilhas recentes</h2>
+        <a href="#" class="link-roxo">Ver todas →</a>
+    </div>
+
+    <div id="listaRecentes"></div>
+</div>
+                </div>
+
+            </div>
+
+        </section>
+<section class="caixa" id="caixaPrevia" hidden>
+    <h2>Verifique os dados</h2>
+    <p class="subtitulo" id="infoPlanilha"></p>
+    <div class="rolagem">
+        <table id="tabelaPrevia"></table>
+    </div>
+</section>
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="planilhas.js"></script>
+</body>
 </body>
 </html>

@@ -1,0 +1,285 @@
+/* ========== 1. CABEÇALHO ========== */
+
+/* Título à esquerda e dica à direita */
+.cabecalho-planilhas {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Ícone + textos lado a lado */
+.titulo-area {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    max-width: 600px;
+}
+
+/* Quadrado verde com X, imitando o ícone do Excel */
+.icone-excel {
+    width: 70px;
+    height: 70px;
+    background-color: #1d7a45;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;   /* centraliza o X */
+    flex-shrink: 0;        /* não deixa o ícone encolher */
+}
+
+/* Etiqueta "PLANILHAS" */
+.etiqueta {
+    background-color: #e8e6fb;
+    color: #6c5ce7;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.titulo-area h1 {
+    margin-top: 8px;
+}
+
+/* Caixa de dica */
+.dica {
+    background-color: #e4e6fa;
+    padding: 18px;
+    border-radius: 12px;
+    width: 340px;
+    flex-shrink: 0;
+    font-size: 14px;
+    color: #4a5075;
+}
+
+.dica p {
+    margin-top: 6px;
+}
+
+/* ========== 2. PASSOS ========== */
+
+.passos {
+    display: flex;
+    align-items: center;   /* alinha as setas no meio */
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.passo {
+    flex: 1;               /* os 4 passos dividem o espaço igualmente */
+    border: 1px solid #e1e5f5;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+/* Bolinha com o número */
+.numero {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;     /* centraliza o número na vertical */
+    text-align: center;
+    background-color: #e8e6fb;
+    color: #6c5ce7;
+    font-weight: bold;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.passo h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.passo p {
+    font-size: 13px;
+    color: #6b7194;
+}
+
+.seta {
+    color: #6b7194;
+    font-size: 20px;
+}
+
+/* ========== 3. PARTE DE BAIXO ========== */
+
+/* Modelos à esquerda, importar à direita */
+.area-baixo {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+/* Dentro dessa área, tira o espaço de cima das caixas */
+.area-baixo .caixa {
+    margin-top: 0;
+}
+
+.coluna-modelos {
+    flex: 1;               /* ocupa o espaço que sobra */
+}
+
+.coluna-direita {
+    width: 340px;
+    display: flex;
+    flex-direction: column; /* uma caixa embaixo da outra */
+    gap: 20px;
+}
+
+/* Título de um lado, link do outro */
+.titulo-modelos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.titulo-modelos h2 {
+    margin-bottom: 0;
+}
+
+.link-roxo {
+    color: #6c5ce7;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ----- Cards dos modelos ----- */
+
+.lista-modelos {
+    display: flex;
+    flex-wrap: wrap;       /* quebra para a linha de baixo */
+    gap: 15px;
+}
+
+/* 3 por linha: (100% - 2 espaços de 15px) / 3 */
+.modelo {
+    width: calc(33.33% - 10px);
+    border: 1px solid #e1e5f5;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.modelo h3 {
+    font-size: 15px;
+    margin: 12px 0 6px;
+}
+
+.modelo p {
+    font-size: 13px;
+    color: #6b7194;
+    min-height: 54px;      /* deixa os botões alinhados */
+}
+
+/* Botão "Usar modelo": largura total e contorno roxo */
+.modelo .botao {
+    width: 100%;
+    margin-top: 12px;
+    color: #6c5ce7;
+    border-color: #6c5ce7;
+    font-weight: bold;
+}
+
+/* Quadradinho colorido do ícone */
+.icone-modelo {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.roxo    { background-color: #e8e6fb; }
+.verde   { background-color: #d7f5e3; }
+.laranja { background-color: #fdeccd; }
+.azul    { background-color: #dbeafe; }
+
+/* ----- Importar planilha ----- */
+
+/* Caixa tracejada */
+.area-upload {
+    border: 2px dashed #b8bfe8;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+    margin: 14px 0;
+    background-color: #f7f8ff;
+}
+
+.area-upload small {
+    display: block;
+    margin-top: 8px;
+    color: #6b7194;
+}
+
+/* Botão grande (o label se comporta como botão) */
+.botao-grande {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+}
+
+/* ----- Planilhas recentes ----- */
+
+.arquivo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eef1fb;
+    font-size: 14px;
+}
+
+.arquivo small {
+    display: block;
+    color: #6b7194;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* Mini ícone verde do Excel */
+.mini-excel {
+    width: 34px;
+    height: 34px;
+    background-color: #1d7a45;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+/* Quando o arquivo está sobre a área (arrastando) */
+.area-upload {
+    cursor: pointer;
+}
+
+.area-upload.arrastando {
+    border-color: #6c5ce7;
+    background-color: #ecebfd;
+}
+
+/* Tabela larga ganha barra de rolagem em vez de estourar a página */
+.rolagem {
+    overflow-x: auto;
+}
+
+/* Mensagem de erro (a de sucesso já existe no main.css) */
+.erro {
+    color: #b91c1c;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.vazio {
+    color: #6b7194;
+    font-size: 14px;
+}

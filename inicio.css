@@ -1,49 +1,116 @@
-
-/* Para utilizar CLASS é o [.]*/
-/* Para utilizar ID é o [#]*/
-
-body {
-    margin: 0;
-    padding-top: 50px;
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #F5F5F5;
+.menu {
+  color: rgb(130, 0, 252);
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #1A1A39;
+
+
+.cards-container {
+  display: flex; /*coloca os cards lado a lado*/
+  flex-wrap: wrap; /* se não couber, passa para a linha de baixo*/
+  gap: 20px; /* ajusta o espaço entre os quadrados*/
+  margin-left: 75px; /* ajusta a distância do quadrado para a esquerda*/
+  
 }
 
-.navInicial {
-    text-align: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+
+
+.card {
+  background-color: white; /*Cor do fundo dos quadrados*/
+  width: 350px; /*Largura fixa do quadrado*/
+  height: 100px; /*Altura fixa do quadrado*/
+  padding: 20px; /*Aqui ajusta o tamanho do quadrado*/
+  border-radius: 12px; /*Aqui é para deixar a borda arredondada*/
+  margin-top: 10px; /*Aqui é a distância dos quadrados*/
+  transition: 0.5s; /*Aqui é para deixar o quadrado mais suave quando passar o mouse por cima*/
 }
 
-.navInicial a {
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-    border-bottom: 3px solid transparent;
-    transition: 0.5s;
+
+
+.card:hover{
+    scale: 105%; /*Aqui é para aumentar o tamanho do quadrado quando passar o mouse por cima*/
+    box-shadow: 
+      2px /*deslocamento horizontal (0 deixa a sombra centralizada)*/
+      2px /*deslocamento vertical (empurra a sombra para baixo)*/
+      5px /*desfoque (quanto maior, mais suave e espalhada)*/
+      rgb(130, 0, 252); /*Cor*/
 }
 
-.navInicial a:hover {
-    background-color: #2f2f5c;
-    scale: 105%;
-    border-bottom: 3px solid white;
+
+
+.tilPrinc{ /*Esta classe é para deixar a frase "Planilhas carregadas" em negrito*/
+
+    font-weight: bold; /*deixa a frase em negrito*/
+    font-size: 18px; /*aqui é para aumentar o tamanho da frase*/
 }
 
-.tilPrinc{
-    margin-left: 10px;
+
+
+.plan{ /*Esta classe é para deixar a frase "3" e a "100%"em verde*/
+
+  color: green; /*deixa a frase em verde*/
+  font-size: 25px; /*aqui é para aumentar o tamanho da frase*/
 }
 
-.subTil{
-    margin-left: 10px;
+
+
+.lin{ /*Esta classe é para deixar a frase "41" e a "3" em vermelho*/
+
+  color: red; /*deixa a frase em vermelho*/
+  font-size: 25px; /*aqui é para aumentar o tamanho da frase*/
+}
+
+
+
+.caixaInfe {
+    background-color: white; /*Cor do fundo dos quadrados*/
+    width: 1440px; /*Largura fixa do quadrado*/
+    height: 140px; /*Altura fixa do quadrado*/
+    padding: 20px; /*Aqui ajusta o tamanho do quadrado*/
+    border-radius: 12px; /*Aqui é para deixar a borda arredondada*/
+    margin-top: 20px; /*Aqui é a distância dos quadrados (de cima para baixo)*/
+    margin-left: 75px; /*Aqui é a distância do quadrado para a esquerda*/
+     transition: 0.5s; /*Aqui é para deixar o quadrado mais suave quando passar o mouse por cima*/
+}
+
+
+
+.texto{ /*Aqui é para ajustar o texto do resumo automático*/
+
+  margin-left: 20px; /*Aqui é a distância do texto para a esquerda*/
+
+}
+
+
+
+.caixaInfe:hover{
+
+  scale: 105%; /*Aqui é para aumentar o tamanho do texto quando passar o mouse por cima*/
+  box-shadow: 
+      2px /*deslocamento horizontal (0 deixa a sombra centralizada)*/
+      2px /*deslocamento vertical (empurra a sombra para baixo)*/
+      5px /*desfoque (quanto maior, mais suave e espalhada)*/
+      rgb(130, 0, 252); /*Cor*/
+
+}
+
+
+
+.caixaSupe {
+  background-color: white; /*Cor do fundo dos quadrados*/
+    width: 720px; /*Largura fixa do quadrado*/
+    height: 500px; /*Altura fixa do quadrado*/
+    padding: 20px; /*Aqui ajusta o tamanho do quadrado*/
+    border-radius: 12px; /*Aqui é para deixar a borda arredondada*/
+    margin-top: 20px; /*Aqui é a distância dos quadrados*/
+    margin-left: 0px; /*Aqui é a distância do quadrado para a esquerda*/
+     transition: 0.5s; /*Aqui é para deixar o quadrado mais suave quando passar o mouse por cima*/
+}
+
+
+
+.caixaSupe-fundo{
+  display: flex; /*coloca os cards lado a lado*/
+  flex-wrap: wrap; /* se não couber, passa para a linha de baixo*/
+  gap: 20px; /* ajusta o espaço entre os quadrados*/
+  margin-left: 75px; /* ajusta a distância do quadrado para a esquerda*/
 }

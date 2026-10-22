@@ -14,7 +14,7 @@ body {
 
 /* Menu lateral */
 .menu {
-    width: 220px;
+    width: 220px;   
     min-height: 100vh;
     background-color: #0f1555;
     color: white;
@@ -62,12 +62,7 @@ body {
 }
 
 /* Caixa branca */
-.caixa {
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-}
+
 
 /* Cabeçalho de página */
 .topo-pagina {

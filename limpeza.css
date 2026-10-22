@@ -1,0 +1,18 @@
+/* Tabela larga ganha barra de rolagem */
+.rolagem {
+    overflow-x: auto;
+}
+
+/* Mensagens (a verde "sucesso" já existe no main.css) */
+.vazio {
+    color: #6b7194;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+/* Link com cara de botão */
+.link-botao {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 12px;
+}

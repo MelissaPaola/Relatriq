@@ -13,20 +13,56 @@
     <aside class="menu">
         <h2 class="logo">Relatriq</h2>
         <ul>
-           <li><a href="inicio.html">Início</a></li>
-<li><a href="planilhas.html">Planilhas</a></li>
-<li><a href="limpeza.html" class="ativo">Ferramentas de limpeza</a></li>
-<li><a href="relatorio.html">Relatórios</a></li>
-<li><a href="exportar.html">Exportar</a></li>
-<li><a href="configuracoes.html">Configurações</a></li>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="planilhas.html">Planilhas</a></li>
+            <li><a href="limpeza.html" class="ativo">Ferramentas de limpeza</a></li>
+            <li><a href="relatorio.html">Relatórios</a></li>
+            <li><a href="exportar.html">Exportar</a></li>
+            <li><a href="configuracoes.html">Configurações</a></li>
         </ul>
     </aside>
 
     <main class="conteudo">
 
-        <!-- COLE AQUI O CONTEÚDO DE CADA PÁGINA (abaixo) -->
+        <h1>Ferramentas de limpeza</h1>
+        <p class="subtitulo">Corrija a planilha com um clique.</p>
+
+        <!-- Aparece só se NÃO existir planilha carregada -->
+        <section class="caixa" id="avisoSemPlanilha" hidden>
+            <h2>Nenhuma planilha carregada</h2>
+            <p class="vazio">Envie uma planilha na página Planilhas para usar as ferramentas.</p>
+            <a href="planilhas.html" class="botao link-botao">Ir para Planilhas</a>
+        </section>
+
+        <!-- Aparece só se existir planilha carregada -->
+        <section id="conteudoLimpeza" hidden>
+
+            <div class="caixa">
+                <h2>Ferramentas de limpeza</h2>
+
+                <div class="grupo-botoes">
+                    <button class="botao botao-claro" id="btnEspacos">Remover espaços extras</button>
+                    <button class="botao botao-claro" id="btnVazias">Remover linhas vazias</button>
+                    <button class="botao botao-claro" id="btnDuplicadas">Remover duplicadas</button>
+                    <button class="botao botao-claro" id="btnNumeros">Converter textos em números</button>
+                </div>
+
+                <!-- O JavaScript escreve o resultado aqui -->
+                <p id="mensagem"></p>
+            </div>
+
+            <div class="caixa">
+                <h2 id="tituloPrevia">Prévia</h2>
+                <p class="subtitulo" id="infoPlanilha"></p>
+                <div class="rolagem">
+                    <table id="tabelaPrevia"></table>
+                </div>
+            </div>
+
+        </section>
 
     </main>
 
+    <script src="limpeza.js"></script>
 </body>
 </html>
