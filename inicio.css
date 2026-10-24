@@ -114,3 +114,143 @@
   gap: 20px; /* ajusta o espaço entre os quadrados*/
   margin-left: 75px; /* ajusta a distância do quadrado para a esquerda*/
 }
+
+/* ==========================================================
+            ATENÇÃO:
+          A PARTIR DAQUI É A RESPONSIVIDADE!!!!!
+            FAVOR NÃO MEXER
+   ========================================================== */
+
+
+/* ---------- Telas até 1600px (notebooks e monitores menores) ---------- */
+@media (max-width: 1600px) {
+
+  .cards-container,
+  .caixaSupe-fundo {
+    margin-right: 20px;
+  }
+
+  /* Cards dividem a linha igualmente, em vez de largura fixa de 350px */
+  .card {
+    box-sizing: border-box;
+    width: auto;
+    flex: 1 1 220px;
+  }
+
+  /* Caixas de cima: duas lado a lado, ocupando o espaço disponível */
+  .caixaSupe {
+    box-sizing: border-box;
+    width: auto;
+    flex: 1 1 320px;
+    max-width: 720px;
+  }
+
+  /* Caixa de baixo: deixa de ter 1440px fixos */
+  .caixaInfe {
+    box-sizing: border-box;
+    width: auto;
+    max-width: 1440px;
+    height: auto;
+    min-height: 140px;
+    margin-right: 20px;
+  }
+}
+
+
+/* ---------- Tablets (até 1024px) ---------- */
+@media (max-width: 1024px) {
+
+  /* As caixas de cima passam a ocupar a linha inteira, uma embaixo da outra */
+  .caixaSupe {
+    flex: 1 1 100%;
+    max-width: none;
+    height: 400px;
+  }
+}
+
+
+/* ---------- Celulares e tablets pequenos (até 768px) ---------- */
+@media (max-width: 768px) {
+
+  /* Menu lateral vira uma barra no topo */
+  .menu {
+    position: static;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 15px 20px;
+  }
+
+  .menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Conteúdo ocupa a tela toda (sem o espaço do menu lateral) */
+  .conteudo {
+    margin-left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .cards-container,
+  .caixaSupe-fundo,
+  .caixaInfe {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Um card por linha */
+  .card {
+    flex: 1 1 100%;
+    height: auto;
+    min-height: 100px;
+  }
+
+  .caixaSupe {
+    height: 300px;
+  }
+
+  /* No toque não existe "hover", e o aumento de 105% causaria rolagem lateral */
+  .card:hover,
+  .caixaInfe:hover {
+    scale: 100%;
+  }
+
+  .texto {
+    margin-left: 0;
+  }
+}
+
+
+/* ---------- Celulares pequenos (até 480px) ---------- */
+@media (max-width: 480px) {
+
+  .conteudo {
+    padding: 15px;
+  }
+
+  .card,
+  .caixaSupe,
+  .caixaInfe {
+    padding: 15px;
+  }
+
+  .tilPrinc {
+    font-size: 16px;
+  }
+
+  .plan,
+  .lin {
+    font-size: 22px;
+  }
+
+  .caixaSupe {
+    height: 250px;
+  }
+}
