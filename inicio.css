@@ -94,6 +94,12 @@
 }
 
 
+.caixaSupe-fundo{
+  display: flex; /*coloca os cards lado a lado*/
+  flex-wrap: wrap; /* se não couber, passa para a linha de baixo*/
+  gap: 20px; /* ajusta o espaço entre os quadrados*/
+  margin-left: 75px; /* ajusta a distância do quadrado para a esquerda*/
+}
 
 .caixaSupe {
   background-color: white; /*Cor do fundo dos quadrados*/
@@ -106,13 +112,18 @@
      transition: 0.5s; /*Aqui é para deixar o quadrado mais suave quando passar o mouse por cima*/
 }
 
+.caixaSupe:hover{
+  scale: 105%;
+    box-shadow: 
+      2px /*deslocamento horizontal (0 deixa a sombra centralizada)*/
+      2px /*deslocamento vertical (empurra a sombra para baixo)*/
+      5px /*desfoque (quanto maior, mais suave e espalhada)*/
+      rgb(130, 0, 252); /*Cor*/
+}
 
-
-.caixaSupe-fundo{
-  display: flex; /*coloca os cards lado a lado*/
-  flex-wrap: wrap; /* se não couber, passa para a linha de baixo*/
-  gap: 20px; /* ajusta o espaço entre os quadrados*/
-  margin-left: 75px; /* ajusta a distância do quadrado para a esquerda*/
+.tilQua{
+  font-weight: bold;
+  font-size: 25px;
 }
 
 /* ==========================================================
@@ -120,13 +131,6 @@
           A PARTIR DAQUI É A RESPONSIVIDADE!!!!!
             FAVOR NÃO MEXER
    ========================================================== */
-
-/* ==========================================================
-   RESPONSIVIDADE - cole este bloco no FINAL do inicio.css
-   (ou salve como arquivo e coloque um <link> depois do inicio.css)
-   Nada do que você já tinha foi alterado, só sobrescrito em telas menores.
-   ========================================================== */
-
 
 /* ---------- Menu hambúrguer: escondido no desktop ---------- */
 .menu-botao,
