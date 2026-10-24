@@ -98,7 +98,7 @@
 .caixaSupe {
   background-color: white; /*Cor do fundo dos quadrados*/
     width: 720px; /*Largura fixa do quadrado*/
-    height: 500px; /*Altura fixa do quadrado*/
+    height: 400px; /*Altura fixa do quadrado*/
     padding: 20px; /*Aqui ajusta o tamanho do quadrado*/
     border-radius: 12px; /*Aqui é para deixar a borda arredondada*/
     margin-top: 20px; /*Aqui é a distância dos quadrados*/
