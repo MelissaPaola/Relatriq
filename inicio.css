@@ -121,6 +121,26 @@
             FAVOR NÃO MEXER
    ========================================================== */
 
+/* ==========================================================
+   RESPONSIVIDADE - cole este bloco no FINAL do inicio.css
+   (ou salve como arquivo e coloque um <link> depois do inicio.css)
+   Nada do que você já tinha foi alterado, só sobrescrito em telas menores.
+   ========================================================== */
+
+
+/* ---------- Menu hambúrguer: escondido no desktop ---------- */
+.menu-botao,
+.menu-fundo {
+  display: none;
+}
+
+/* checkbox que controla o menu (invisível, mas acessível pelo teclado) */
+.menu-toggle {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 /* ---------- Telas até 1600px (notebooks e monitores menores) ---------- */
 @media (max-width: 1600px) {
@@ -172,30 +192,125 @@
 /* ---------- Celulares e tablets pequenos (até 768px) ---------- */
 @media (max-width: 768px) {
 
-  /* Menu lateral vira uma barra no topo */
+  /* Botão das três barrinhas */
+  .menu-botao {
+    display: flex;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1100;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgb(130, 0, 252);
+    color: white;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    transition: left 0.3s;
+  }
+
+  .menu-botao::before {
+    content: "\2630"; /* ☰ */
+  }
+
+  /* Menu lateral vira uma gaveta que fica escondida e abre por cima do conteúdo */
   .menu {
-    position: static;
-    width: 100%;
-    height: auto;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: min(280px, 80vw) !important;
+    height: 100vh !important;
     box-sizing: border-box;
-    padding: 15px 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+
+  /* Garante que a gaveta tenha fundo e que os links apareçam */
+  .menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background-color: #101654 !important;
+    padding: 20px 16px !important;
+  }
+
+  .menu .logo {
+    margin: 0 0 24px;
+    color: rgb(130, 0, 252);
   }
 
   .menu ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 16px;
+    display: block !important;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
+  .menu li {
+    display: block !important;
+    margin: 0 0 6px;
+  }
+
+  .menu a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #e8e8ff !important;
+    text-decoration: none;
+  }
+
+  .menu a.ativo {
+    background-color: #6c5ce7;
+    color: #fff !important;
+  }
+
+  /* Fundo escurecido atrás do menu aberto (clicar nele fecha o menu) */
+  .menu-fundo {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  /* Estado "aberto" */
+  .menu-toggle:checked ~ .menu {
+    transform: translateX(0);
+  }
+
+  .menu-toggle:checked ~ .menu-fundo {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-toggle:checked ~ .menu-botao {
+    left: calc(min(280px, 80vw) - 56px);
+  }
+
+  .menu-toggle:checked ~ .menu-botao::before {
+    content: "\2715"; /* ✕ */
+  }
+
+  .menu-toggle:focus-visible ~ .menu-botao {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px rgb(130, 0, 252);
+  }
+
   /* Conteúdo ocupa a tela toda (sem o espaço do menu lateral) */
   .conteudo {
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 70px 20px 20px; /* espaço em cima para o botão do menu */
   }
 
   .cards-container,
