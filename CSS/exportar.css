@@ -4,35 +4,21 @@
 }
 
 .subtitulo-pagina {
-  margin: 4px 0 0 75px;
-  font-size: 13px;
+  margin: 5px 10px 20px 75px;
+  font-size: 15px;
 }
 
-.caixaExportar {
-  box-sizing: border-box;
-  background-color: white;
-  max-width: 1440px;
-  padding: 20px 30px;
-  border-radius: 12px;
-  margin: 20px 20px 0 75px;
-}
-
-.tilExp {
-  margin: 0 0 20px;
-  font-size: 25px;
-  font-weight: bold;
-}
 
 .botoes-exportar {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 12px;
 }
 
 .btn-exportar {
   padding: 10px 24px;
   border: 2px solid #111;
-  border-radius: 6px;
+  border-radius: 10px;
   background-color: #d9d9d9;
   color: #111;
   font-size: 14px;
@@ -44,35 +30,6 @@
   box-shadow: 2px 2px 5px;
 }
 
-.btn-exportar.ativo {
-  background-color: rgb(130, 0, 252);
-  color: white;
-  font-weight: bold;
-}
-
-.status-exportar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0 0;
-  color: green;
-  font-size: 14px;
-}
 
 
 
-@media (max-width: 768px) {
-  .titulo-pagina,
-  .subtitulo-pagina {
-    margin-left: 0;
-  }
-
-  .caixaExportar {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .btn-exportar {
-    flex: 1 1 100%;
-  }
-}

@@ -50,6 +50,21 @@ body {
     color: white;
 }
 
+.menu {
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 40px;
+}
+
+.menu a.ativo {
+    background: linear-gradient(90deg, #8b3dff, #6c5ce7);
+    border-radius: 999px;
+}
+
+/* Empurra o Login para o fim do menu */
+.menu .login {
+    margin-top: auto;
+}
 /* Área do conteúdo */
 .conteudo {
     flex: 1;
@@ -139,3 +154,4 @@ select {
     border-radius: 8px;
     background-color: white;
 }
+
