@@ -1,24 +1,45 @@
-/* Tira os espaços padrão do navegador */
+/* ================= BASE ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fonte e cor de fundo da página */
 body {
     font-family: Arial, sans-serif;
     background-color: #eef1fb;
+    color: #111a3a;
+    line-height: 1.4;
     display: flex;
 }
 
-/* Menu lateral */
+img {
+    max-width: 100%;
+}
+
+button,
+select,
+input {
+    font-family: inherit;
+}
+
+h1 { font-size: 28px; }
+
+/* ================= MENU LATERAL (computador) ================= */
 .menu {
-    width: 220px;   
-    min-height: 100vh;
+    width: 220px;
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;          /* o menu acompanha a rolagem */
+    top: 0;
+    align-self: flex-start;
+    overflow-y: auto;
     background-color: #0f1555;
     color: white;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 40px;
 }
 
 .logo {
@@ -46,18 +67,8 @@ body {
 }
 
 .menu a.ativo {
-    background-color: #6c5ce7;
-    color: white;
-}
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    border-top-right-radius: 40px;
-}
-
-.menu a.ativo {
     background: linear-gradient(90deg, #8b3dff, #6c5ce7);
+    color: white;
     border-radius: 999px;
 }
 
@@ -65,9 +76,11 @@ body {
 .menu .login {
     margin-top: auto;
 }
-/* Área do conteúdo */
+
+/* ================= CONTEÚDO ================= */
 .conteudo {
     flex: 1;
+    min-width: 0;              /* deixa o conteúdo encolher sem estourar a tela */
     padding: 30px;
 }
 
@@ -76,19 +89,30 @@ body {
     margin-bottom: 20px;
 }
 
-/* Caixa branca */
+/* Caixa branca (usada em todas as páginas) */
+.caixa {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
 
+.caixa h2 {
+    margin-bottom: 12px;
+}
 
-/* Cabeçalho de página */
+/* Cabeçalho de página: título à esquerda, botões à direita */
 .topo-pagina {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
     margin-bottom: 20px;
 }
 
-/* Botões */
+/* ================= BOTÕES ================= */
 .botao {
+    display: inline-block;
     background-color: #6c5ce7;
     color: white;
     border: none;
@@ -96,6 +120,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
+    text-decoration: none;
 }
 
 .botao:hover {
@@ -114,7 +139,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* Tabelas */
+/* ================= TABELAS ================= */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -134,6 +159,12 @@ td {
     border-bottom: 1px solid #eef1fb;
 }
 
+/* Tabela larga ganha barra de rolagem em vez de estourar a página */
+.rolagem {
+    overflow-x: auto;
+}
+
+/* ================= TEXTOS E CAMPOS ================= */
 .status {
     background-color: #d7f5e3;
     color: #15803d;
@@ -148,6 +179,18 @@ td {
     margin-top: 12px;
 }
 
+.erro {
+    color: #b91c1c;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.vazio {
+    color: #6b7194;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
 select {
     padding: 8px;
     border: 1px solid #e1e5f5;
@@ -155,3 +198,179 @@ select {
     background-color: white;
 }
 
+/* Acessibilidade: contorno visível ao navegar pelo teclado */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+label:focus-visible {
+    outline: 3px solid #8b3dff;
+    outline-offset: 2px;
+}
+
+.menu a:focus-visible {
+    outline-color: white;
+}
+
+/* ================= MENU HAMBÚRGUER: escondido no computador ================= */
+.menu-botao,
+.menu-fundo {
+    display: none;
+}
+
+.menu-toggle {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ================= RESPONSIVO ================= */
+
+/* ----- Tablet: até 1100px ----- */
+@media (max-width: 1100px) {
+
+    .menu {
+        width: 190px;
+        padding: 16px;
+    }
+
+    .conteudo {
+        padding: 24px;
+    }
+}
+
+/* ----- Até 768px: menu vira hambúrguer ----- */
+@media (max-width: 768px) {
+
+    /* Botão ☰ no canto da tela */
+    .menu-botao {
+        display: flex;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 1100;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background-color: #8b3dff;
+        color: white;
+        font-size: 26px;
+        line-height: 1;
+        cursor: pointer;
+        transition: left 0.3s;
+    }
+
+    .menu-botao::before {
+        content: "\2630";        /* ☰ */
+    }
+
+    /* O menu vira uma gaveta escondida à esquerda */
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: min(280px, 80vw);
+        height: 100vh;
+        z-index: 1000;
+        border-radius: 0;
+        padding: 20px 16px;
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition: transform 0.3s, visibility 0.3s;
+    }
+
+    /* Fundo escuro atrás do menu aberto (clicar fecha) */
+    .menu-fundo {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 900;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+    }
+
+    /* Menu aberto */
+    .menu-toggle:checked ~ .menu {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .menu-toggle:checked ~ .menu-fundo {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .menu-toggle:checked ~ .menu-botao {
+        left: calc(min(280px, 80vw) - 56px);
+    }
+
+    .menu-toggle:checked ~ .menu-botao::before {
+        content: "\2715";        /* ✕ */
+    }
+
+    .menu-toggle:focus-visible ~ .menu-botao {
+        outline: 3px solid white;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 5px #8b3dff;
+    }
+
+    /* Conteúdo ocupa a tela toda, com espaço em cima para o botão ☰ */
+    .conteudo {
+        width: 100%;
+        padding: 70px 20px 20px;
+    }
+}
+
+/* ----- Celular: até 650px ----- */
+@media (max-width: 650px) {
+
+    h1 { font-size: 24px; }
+
+    /* Título em cima, botões embaixo */
+    .topo-pagina {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Alvos de toque maiores (mais fáceis de acertar com o dedo) */
+    .botao {
+        min-height: 44px;
+    }
+
+    select {
+        min-height: 44px;
+        font-size: 16px;       /* evita o zoom automático do iPhone */
+    }
+}
+
+/* ----- Celular pequeno: até 480px ----- */
+@media (max-width: 480px) {
+
+    .conteudo {
+        padding: 70px 14px 14px;
+    }
+
+    .caixa {
+        padding: 16px;
+    }
+
+    /* Botões dos grupos ocupam a linha toda */
+    .grupo-botoes .botao {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}
+
+/* Para quem prefere sem animações */
+@media (prefers-reduced-motion: reduce) {
+
+    .menu,
+    .menu-fundo,
+    .menu-botao {
+        transition: none;
+    }
+}

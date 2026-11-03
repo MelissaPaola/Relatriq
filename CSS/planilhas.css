@@ -21,6 +21,7 @@
     background-color: white;
     padding: 8px;
     border-radius: 14px;
+    pointer-events: none;
 }
 
 .etiqueta {
@@ -160,9 +161,16 @@
 
 /* Ícone + nome do arquivo na mesma célula */
 .celula-nome {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    word-break: break-word;   /* nomes grandes quebram de linha */
+}
+
+.celula-nome img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.celula-nome span {
+    vertical-align: middle;
 }
 
 .mini-excel {
@@ -260,4 +268,95 @@ button.status {
     color: #6b7194;
     font-size: 14px;
     margin-top: 12px;
+}
+
+/* ========== RESPONSIVO ========== */
+
+/* A tabela não encolhe demais: se faltar espaço, rola de lado */
+.tabela-caixa table {
+    min-width: 560px;
+}
+
+/* ----- Até 1200px: cards em 2 colunas ----- */
+@media (max-width: 1200px) {
+
+    .cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 8px);
+    }
+}
+
+/* ----- Até 1100px: lista em cima, detalhes embaixo ----- */
+@media (max-width: 1100px) {
+
+    .lista-area {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 20px;
+    }
+
+    .tabela-caixa {
+        flex: none;
+        width: 100%;
+    }
+
+    .detalhes {
+        width: 100%;
+    }
+}
+
+/* ----- Até 650px ----- */
+@media (max-width: 650px) {
+
+    .topo-planilhas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .botao-nova {
+        width: 100%;
+    }
+
+    /* Esconde "Tamanho" e "Última atualização" */
+    .tabela-caixa th:nth-child(2),
+    .tabela-caixa td:nth-child(2),
+    .tabela-caixa th:nth-child(3),
+    .tabela-caixa td:nth-child(3) {
+        display: none;
+    }
+
+    .tabela-caixa table {
+        min-width: 0;
+    }
+
+    .acao {
+        width: 38px;
+        height: 38px;
+        margin-right: 4px;
+    }
+
+    .detalhe-linha {
+        flex-wrap: wrap;
+    }
+}
+
+/* ----- Até 480px ----- */
+@media (max-width: 480px) {
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .icone-excel {
+        width: 52px;
+        height: 52px;
+    }
+
+    .titulo-area h1 {
+        font-size: 22px;
+    }
 }

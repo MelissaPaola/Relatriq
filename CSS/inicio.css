@@ -145,6 +145,10 @@
                                                                    FAVOR NÃO MEXER
    ================================================================================================================================================== */
 
+/* ==================================================================================================================================================
+                                                                     RESPONSIVIDADE
+   ================================================================================================================================================== */
+
 /* ---------- Menu hambúrguer: escondido no desktop ---------- */
 .menu-botao,
 .menu-fundo {
@@ -158,9 +162,29 @@
   pointer-events: none;
 }
 
+/* NOVO: imagens nunca passam do tamanho da caixa */
+.img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
 
 /* ---------- Telas até 1600px (notebooks e monitores menores) ---------- */
 @media (max-width: 1600px) {
+
+  /* NOVO: serve de referência para o ícone de perfil */
+  .conteudo {
+    position: relative;
+  }
+
+  /* NOVO: ícone de perfil fixo no canto, sem margens gigantes */
+  .svgIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+    height: 70px;
+  }
 
   .cards-container,
   .caixaSupe-fundo {
@@ -180,6 +204,14 @@
     width: auto;
     flex: 1 1 320px;
     max-width: 720px;
+    height: auto; /* AJUSTADO: a altura acompanha o conteúdo */
+  }
+
+  /* AJUSTADO: imagem se adapta à largura da caixa */
+  .img {
+    width: 100%;
+    height: auto;
+    max-height: 340px;
   }
 
   /* Caixa de baixo: deixa de ter 1440px fixos */
@@ -201,7 +233,6 @@
   .caixaSupe {
     flex: 1 1 100%;
     max-width: none;
-    height: 400px;
   }
 }
 
@@ -245,10 +276,6 @@
     z-index: 1000;
     transform: translateX(-100%);
     transition: transform 0.3s;
-  }
-
-  /* Garante que a gaveta tenha fundo e que os links apareçam */
-  .menu {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -330,6 +357,13 @@
     padding: 70px 20px 20px; /* espaço em cima para o botão do menu */
   }
 
+  /* NOVO: ícone de perfil alinhado com o botão do menu */
+  .svgIcon {
+    top: 12px;
+    right: 12px;
+    height: 44px;
+  }
+
   .cards-container,
   .caixaSupe-fundo,
   .caixaInfe {
@@ -344,13 +378,14 @@
     min-height: 100px;
   }
 
-  .caixaSupe {
-    height: 300px;
+  .img {
+    max-height: 220px; /* AJUSTADO */
   }
 
   /* No toque não existe "hover", e o aumento de 105% causaria rolagem lateral */
   .card:hover,
-  .caixaInfe:hover {
+  .caixaInfe:hover,
+  .caixaSupe:hover { /* NOVO: .caixaSupe estava faltando */
     scale: 100%;
   }
 
@@ -364,7 +399,7 @@
 @media (max-width: 480px) {
 
   .conteudo {
-    padding: 15px;
+    padding: 70px 15px 15px; /* AJUSTADO: mantém o espaço do botão do menu */
   }
 
   .card,
@@ -377,12 +412,16 @@
     font-size: 16px;
   }
 
+  .tilQua {
+    font-size: 20px; /* NOVO */
+  }
+
   .plan,
   .lin {
     font-size: 22px;
   }
 
-  .caixaSupe {
-    height: 250px;
+  .img {
+    max-height: 170px; /* AJUSTADO */
   }
 }

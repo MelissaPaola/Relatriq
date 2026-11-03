@@ -9,7 +9,10 @@
 </head>
 
 <body>
-
+ <!-- Botão do menu (os 3 primeiros itens vêm ANTES do <aside>) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-botao" aria-label="Abrir ou fechar o menu"></label>
+    <label for="menu-toggle" class="menu-fundo"></label>
     <aside class="menu">
         <h2 class="logo">Relatriq</h2>
         <ul>
@@ -93,13 +96,14 @@
 
             <div class="caixa tabela-caixa">
                 <h2>Lista de Planilhas</h2>
+<p class="dica-toque">Toque em uma planilha da lista para ver os detalhes.</p>
 
                 <!-- Área de arrastar (continua funcionando como antes) -->
                 <div class="area-upload" id="areaUpload">
                     ☁️ <b>Arraste um .xlsx ou .xls aqui</b> ou <span class="link-roxo">clique para enviar</span>
                     <small>Tudo é processado no seu navegador.</small>
                 </div>
-
+<div class="rolagem">
                 <table>
                     <thead>
                         <tr>
@@ -113,7 +117,7 @@
                     <!-- O JavaScript cria as linhas aqui -->
                     <tbody id="corpoTabela"></tbody>
                 </table>
-
+</div>
                 <p class="vazio" id="semPlanilhas" hidden>Nenhuma planilha ainda. Envie a primeira para começar.</p>
             </div>
 

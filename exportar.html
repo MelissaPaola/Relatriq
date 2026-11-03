@@ -9,7 +9,10 @@
 </head>
 
 <body>
-
+ <!-- Botão do menu (os 3 primeiros itens vêm ANTES do <aside>) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-botao" aria-label="Abrir ou fechar o menu"></label>
+    <label for="menu-toggle" class="menu-fundo"></label>
     <aside class="menu">
         <h2 class="logo">Relatriq</h2>
         <ul>
@@ -17,7 +20,7 @@
             <a href="planilhas.html">Planilhas</a>
             <a href="limpeza.html">Ferramentas de limpeza</a>
             <a href="relatorio.html">Relatórios</a>
-            <a href="exportar.html">Exportar</a>
+            <a href="exportar.html" class="ativo">Exportar</a>
             <a href="configuracoes.html">Configurações</a>
         </ul>
              <a href="#" class="login">👤 Login</a>
