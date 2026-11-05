@@ -1,8 +1,15 @@
 /* ================= BASE ================= */
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+/* ===================  Fonte só do título Relatriq ======================*/
+.logo {
+    font-family: "Lobster Two", cursive;
+    font-weight: 700;       /* 400 = normal, 700 = negrito */
+    font-style: italic;     /* troque por italic para o estilo inclinado */
 }
 
 body {
