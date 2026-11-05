@@ -65,10 +65,10 @@
     background-color: white; /*Cor do fundo dos quadrados*/
     width: 1460px; /*Largura fixa do quadrado*/
     height: 140px; /*Altura fixa do quadrado*/
-    padding: 20px; /*Aqui ajusta o tamanho do quadrado*/
+    padding: 20px; /*Aqui ajusta o tamanho  do quadrado*/
     border-radius: 12px; /*Aqui é para deixar a borda arredondada*/
     margin-top: 20px; /*Aqui é a distância dos quadrados (de cima para baixo)*/
-    margin-left: 75px; /*Aqui é a distância do quadrado para a esquerda*/
+    margin-left: 75px; /*Aqui é a distância doquadrado para a esquerda*/
      transition: 0.5s; /*Aqui é para deixar o quadrado mais suave quando passar o mouse por cima*/
 }
 

@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Relatriq - Início</title>
-    <link rel="stylesheet" href="CSS/inicio.css"/>
-    <link rel="stylesheet" href="CSS/main.css"/>
+    <link rel="stylesheet" href="CSS/inicio.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
   </head>
 
   <body>
-
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" />
+    <input
+      type="checkbox"
+      id="menu-toggle"
+      class="menu-toggle"
+      aria-label="Abrir menu"
+    />
     <label for="menu-toggle" class="menu-botao" aria-hidden="true"></label>
     <label for="menu-toggle" class="menu-fundo" aria-hidden="true"></label>
     <aside class="menu">
@@ -21,8 +25,9 @@
         <a href="limpeza.html">Ferramentas de limpeza</a>
         <a href="relatorio.html">Relatórios</a>
         <a href="configuracoes.html">Configurações</a>
+  
       </ul>
-        <a href="#" class="login">👤 Login</a>
+      <a href="#" class="login">👤 Login</a>
     </aside>
 
     <main class="conteudo">
@@ -32,61 +37,75 @@
       </p>
 
       <div>
-        <img src="assets/JS.svg" alt="Imagem do perfil do usuario" class="svgIcon">
+        <img
+          src="assets/JS.svg"
+          alt="Imagem do perfil do usuario"
+          class="svgIcon"
+        />
       </div>
 
       <div class="cards-container">
-          <div class="card">
-            <p class="tilPrinc">Faturamento Mensal 💵</p>
-            <p class="plan">R$ 128.467</p>
-          </div>
+        <div class="card">
+          <p class="tilPrinc">Faturamento Mensal 💵</p>
+          <p class="plan">R$ 128.467</p>
+        </div>
 
-          <div class="card">
-            <p class="tilPrinc">Planilhas Ativas 📊</p>
-            <p class="lin">41</p>
-          </div>
+        <div class="card">
+          <p class="tilPrinc">Planilhas Ativas 📊</p>
+          <p class="lin">41</p>
+        </div>
 
-          <div class="card">
-            <p class="tilPrinc">Contas a pagar 📝</p>
-            <p class="lin">R$ 62.790</p>
-          </div>
+        <div class="card">
+          <p class="tilPrinc">Contas a pagar 📝</p>
+          <p class="lin">R$ 62.790</p>
+        </div>
 
-          <div class="card">
-            <p class="tilPrinc">Lucro Líquido 💹</p>
-            <p class="plan">R$ 65.677</p>
-          </div>
+        <div class="card">
+          <p class="tilPrinc">Lucro Líquido 💹</p>
+          <p class="plan">R$ 65.677</p>
+        </div>
       </div>
-
-
 
       <div class="caixaSupe-fundo">
         <div class="caixaSupe">
           <p class="tilQua">Ranking de retorno</p>
-          <img src="assets/Ranking_de_retorno.png" alt="Imagem provisoria de gravico de colunas" class="img">
+          <img
+            src="assets/Ranking_de_retorno.svg"
+            alt="Imagem provisoria de grafico de colunas"
+            class="img"
+          />
         </div>
 
         <div class="caixaSupe">
           <p class="tilQua">Distribuição</p>
-          <img src="assets/Grafico_provisorio.png" alt="Imagem provisoria de grafico de pizza" class="img">
+          <img
+            src="assets/pizza.svg"
+            alt="Imagem provisoria de grafico de pizza"
+            class="img"
+          />
         </div>
-     </div>
+      </div>
 
       <div class="caixaInfe">
         <div class="texto">
-        <h2>Resumo automático</h2>
+          <h2>Resumo automático</h2>
           <ul>
-            <li> Em distribuição, o maior gasto foi em Pessoal;</li>
-            <li> O maior retorno foi no Marketing, no Ranking de retorno;</li>
-            <li> Lucro foi de aproximadamente 51,12%, ou seja, a cada produto vendido por R$ 100,00, obteve um lucro livre de R$ 51,12.</li>
+            <li>Em distribuição, o maior gasto foi em Pessoal;</li>
+            <li>O maior retorno foi no Marketing, no Ranking de retorno;</li>
+            <li>
+              Lucro foi de aproximadamente 51,12%, ou seja, a cada produto
+              vendido por R$ 100,00, obteve um lucro livre de R$ 51,12.
+            </li>
           </ul>
         </div>
       </div>
       <div class="botaoexportar">
-    <button type="button" id="btnExportar" class="btn-exportar">
-        <span aria-hidden="true">⬇</span>
-        Exporte já
-    </button>
-</div>
+        <button type="button" id="btnExportar" class="btn-exportar">
+          <span aria-hidden="true">⬇</span>
+          Exporte já
+        </button>
+      </div>
     </main>
+     <script src="JS/main.js"></script>
   </body>
 </html>
