@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatriq - Limpeza</title>
-    
-    <link rel="stylesheet" href="CSS/main.css"/>
-    <link rel="stylesheet" href="CSS/limpeza.css"/>
 
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/limpeza.css" />
+    <link rel="icon" type="image/png" href="assets/logo relatriq.png">
+    <link rel="stylesheet" href="CSS/escuro.css" />
+    <script src="JS/main.js"></script>
 </head>
 
 <body>
- <!-- Botão do menu (os 3 primeiros itens vêm ANTES do <aside>) -->
+
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <label for="menu-toggle" class="menu-botao" aria-label="Abrir ou fechar o menu"></label>
     <label for="menu-toggle" class="menu-fundo"></label>
@@ -33,14 +36,13 @@
         <h1>Ferramentas de limpeza</h1>
         <p class="subtitulo">Corrija a planilha com um clique.</p>
 
-        <!-- Aparece só se NÃO existir planilha carregada -->
+
         <div class="caixa" id="avisoSemPlanilha" hidden>
             <h2>Nenhuma planilha carregada</h2>
             <p class="vazio">Envie uma planilha na página Planilhas para usar as ferramentas.</p>
             <a href="planilhas.html" class="botao link-botao">Ir para Planilhas</a>
         </div>
 
-        <!-- Aparece só se existir planilha carregada -->
         <div id="conteudoLimpeza" hidden>
 
             <div class="caixa">
@@ -53,7 +55,6 @@
                     <button class="botao botao-claro" id="btnNumeros">Converter textos em números</button>
                 </div>
 
-                <!-- O JavaScript escreve o resultado aqui -->
                 <p id="mensagem"></p>
             </div>
 
@@ -64,10 +65,11 @@
                     <table id="tabelaPrevia"></table>
                 </div>
             </div>
-                
+
         </div>
     </main>
 
     <script src="JS/limpeza.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,205 @@
+
+html.escuro {
+    color-scheme: dark;
+}
+
+html.escuro body,
+html.escuro .conteudo {
+    background-color: #12121f !important;
+    color: #e6e6f0 !important;
+}
+
+html.escuro .conteudo h1,
+html.escuro .conteudo h2,
+html.escuro .conteudo h3,
+html.escuro .conteudo p,
+html.escuro .conteudo li,
+html.escuro .conteudo label,
+html.escuro .conteudo strong,
+html.escuro .conteudo b,
+html.escuro .conteudo td,
+html.escuro .tilPrinc,
+html.escuro .tilQua,
+html.escuro .plan,
+html.escuro .lin {
+    color: #e6e6f0 !important;
+}
+
+html.escuro .subtitulo,
+html.escuro .vazio,
+html.escuro .dica-toque,
+html.escuro .conteudo small,
+html.escuro .conteudo th {
+    color: #a9a9c2 !important;
+}
+
+html.escuro .caixa,
+html.escuro .card,
+html.escuro .caixaSupe,
+html.escuro .caixaInfe,
+html.escuro .detalhes,
+html.escuro .resumoRelatorio,
+html.escuro .area-upload {
+    background-color: #1e1e33 !important;
+    border-color: #33334f !important;
+    color: #e6e6f0 !important;
+}
+
+html.escuro table,
+html.escuro thead,
+html.escuro tbody,
+html.escuro tr {
+    background-color: transparent !important;
+}
+
+html.escuro th,
+html.escuro td {
+    background-color: transparent !important;
+    border-bottom-color: #33334f !important;
+}
+
+html.escuro hr {
+    border-color: #33334f !important;
+}
+
+html.escuro select,
+html.escuro input[type="text"],
+html.escuro input[type="search"] {
+    background-color: #26263f !important;
+    color: #e6e6f0 !important;
+    border-color: #3d3d5c !important;
+}
+
+html.escuro .botao-claro {
+    background-color: #26263f !important;
+    color: #e6e6f0 !important;
+    border-color: #3d3d5c !important;
+}
+
+html.escuro .status {
+    background-color: #14532d !important;
+    color: #86efac !important;
+}
+
+html.escuro .sucesso {
+    color: #4ade80 !important;
+}
+
+html.escuro .erro {
+    color: #f87171 !important;
+}
+
+html.escuro .link-roxo {
+    color: #a78bfa !important;
+}
+
+html.escuro .img,
+html.escuro .resumo-relatorio img {
+    background-color: #f4f4fa;
+    border-radius: 10px;
+}
+
+html.escuro .conteudo .subtitulo,
+html.escuro .conteudo .vazio,
+html.escuro .conteudo .dica-toque,
+html.escuro .conteudo .detalhes-topo small,
+html.escuro .conteudo .detalhe-linha span,
+html.escuro .conteudo .area-upload small {
+    color: #a9a9c2 !important;
+}
+
+html.escuro .conteudo .sucesso {
+    color: #4ade80 !important;
+}
+
+html.escuro .conteudo .erro {
+    color: #f87171 !important;
+}
+
+html.escuro .conteudo .plan {
+    color: #4ade80 !important;
+}
+
+html.escuro .conteudo .lin {
+    color: #f87171 !important;
+}
+
+html.escuro .conteudo .card strong,
+html.escuro .conteudo .etiqueta,
+html.escuro .conteudo .titulo-area .subtitulo {
+    color: #b794ff !important;
+}
+
+html.escuro .verde {
+    background-color: #14532d !important;
+}
+
+html.escuro .roxo {
+    background-color: #2e2a5e !important;
+}
+
+html.escuro .cinza {
+    background-color: #2a2a42 !important;
+}
+
+html.escuro .linha:hover {
+    background-color: #26263f !important;
+}
+
+html.escuro .linha.selecionada {
+    background-color: #2e2a5e !important;
+}
+
+html.escuro .status.inativo {
+    background-color: #2a2a42 !important;
+    color: #a9a9c2 !important;
+}
+
+html.escuro .acao {
+    background-color: #2e2a5e !important;
+    color: #b794ff !important;
+}
+
+html.escuro .acao.excluir {
+    background-color: #4a1d24 !important;
+    color: #f87171 !important;
+}
+
+html.escuro .detalhe-linha {
+    border-bottom-color: #33334f !important;
+}
+
+html.escuro .area-upload.arrastando {
+    background-color: #2e2a5e !important;
+    border-color: #8b3dff !important;
+}
+
+html.escuro .area-upload {
+    border-style: dashed !important;
+    border-color: #4a4a72 !important;
+}
+
+html.escuro .area-upload.arrastando {
+    border-color: #8b3dff !important;
+}
+
+html.escuro .resumoRelatorio {
+    border-color: #33334f !important;
+}
+
+html.escuro a:focus-visible,
+html.escuro button:focus-visible,
+html.escuro select:focus-visible,
+html.escuro input:focus-visible,
+html.escuro label:focus-visible {
+    outline-color: #b794ff;
+}
+
+html.escuro .caixaSupe-fundo,
+html.escuro .texto,
+html.escuro .topo-relatorio,
+html.escuro .resumo-relatorio,
+html.escuro .topo-planilhas {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}

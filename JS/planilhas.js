@@ -1,6 +1,4 @@
-// ==================================================
-// 1. ELEMENTOS DA PÁGINA E VARIÁVEIS
-// ==================================================
+
 const btnNova = document.getElementById("btnNova");
 const inputArquivo = document.getElementById("arquivo");
 const areaUpload = document.getElementById("areaUpload");
@@ -12,28 +10,21 @@ const caixaPrevia = document.getElementById("caixaPrevia");
 const infoPlanilha = document.getElementById("infoPlanilha");
 const tabelaPrevia = document.getElementById("tabelaPrevia");
 
-// Caminho do seu ícone (confira o nome do arquivo)
 const ICONE_EXCEL = "assets/exel.png";
 
-// Lista de planilhas (vem do navegador) e qual está selecionada
 let planilhas = carregarLista();
 let selecionada = null;
 
-
-// ==================================================
-// 2. GUARDAR E LER A LISTA (localStorage)
-// ==================================================
 function carregarLista() {
     const texto = localStorage.getItem("listaPlanilhas");
 
     if (texto) {
-        return JSON.parse(texto);   // texto → lista
+        return JSON.parse(texto); 
     }
 
     return [];
 }
 
-// Devolve true se deu certo, false se estourou o limite do navegador
 function salvarLista() {
     try {
         localStorage.setItem("listaPlanilhas", JSON.stringify(planilhas));
@@ -44,11 +35,7 @@ function salvarLista() {
 }
 
 
-// ==================================================
-// 3. FUNÇÕES AUXILIARES
-// ==================================================
 
-// 2500000 → "2,4 MB"   |   51200 → "50,0 KB"
 function formatarTamanho(bytes) {
     if (bytes < 1024 * 1024) {
         return (bytes / 1024).toFixed(1).replace(".", ",") + " KB";
@@ -57,7 +44,6 @@ function formatarTamanho(bytes) {
     return (bytes / (1024 * 1024)).toFixed(1).replace(".", ",") + " MB";
 }
 
-// "22/10/2026 14:23"
 function agora() {
     const hoje = new Date();
     const dia = hoje.toLocaleDateString("pt-BR");
@@ -83,11 +69,6 @@ function acharPlanilha(nome) {
 }
 
 
-// ==================================================
-// 4. ENVIAR PLANILHA (botão, clique na área e arrastar)
-// ==================================================
-
-// Botão "Nova Planilha" e clique na área tracejada abrem o seletor
 btnNova.addEventListener("click", function () {
     inputArquivo.click();
 });
@@ -96,7 +77,6 @@ areaUpload.addEventListener("click", function () {
     inputArquivo.click();
 });
 
-// Quando o usuário escolhe o arquivo
 inputArquivo.addEventListener("change", function () {
     const arquivo = inputArquivo.files[0];
 
@@ -104,23 +84,20 @@ inputArquivo.addEventListener("change", function () {
         lerArquivo(arquivo);
     }
 
-    inputArquivo.value = "";   // permite escolher o mesmo arquivo de novo
+    inputArquivo.value = ""; 
 });
 
-// Arquivo em cima da área
 areaUpload.addEventListener("dragover", function (evento) {
-    evento.preventDefault();               // sem isso o navegador não deixa soltar
+    evento.preventDefault();       
     areaUpload.classList.add("arrastando");
 });
 
-// Arquivo saiu de cima da área
 areaUpload.addEventListener("dragleave", function () {
     areaUpload.classList.remove("arrastando");
 });
 
-// Arquivo foi solto
 areaUpload.addEventListener("drop", function (evento) {
-    evento.preventDefault();               // sem isso o navegador abriria o arquivo
+    evento.preventDefault();   
     areaUpload.classList.remove("arrastando");
 
     const arquivo = evento.dataTransfer.files[0];
@@ -144,7 +121,7 @@ function lerArquivo(arquivo) {
         try {
             const bytes = new Uint8Array(evento.target.result);
             const livro = XLSX.read(bytes, { type: "array" });
-            const aba = livro.Sheets[livro.SheetNames[0]];   // primeira aba
+            const aba = livro.Sheets[livro.SheetNames[0]];
             const linhas = XLSX.utils.sheet_to_json(aba, { defval: "" });
 
             if (linhas.length === 0) {
@@ -165,12 +142,10 @@ function lerArquivo(arquivo) {
 function adicionarPlanilha(arquivo, colunas, linhas) {
     const listaAntiga = planilhas;
 
-    // Se já existe uma com o mesmo nome, ela é substituída
     planilhas = planilhas.filter(function (item) {
         return item.nome !== arquivo.name;
     });
 
-    // unshift coloca no começo da lista
     planilhas.unshift({
         nome: arquivo.name,
         tamanho: arquivo.size,
@@ -180,7 +155,6 @@ function adicionarPlanilha(arquivo, colunas, linhas) {
         linhas: linhas
     });
 
-    // Se não coube no navegador, volta a lista como estava
     if (!salvarLista()) {
         planilhas = listaAntiga;
         mostrarErro("Arquivo grande demais para guardar no navegador (limite de cerca de 5 MB).");
@@ -191,10 +165,6 @@ function adicionarPlanilha(arquivo, colunas, linhas) {
     selecionar(arquivo.name);
 }
 
-
-// ==================================================
-// 5. SELECIONAR (a planilha que a página Limpeza vai usar)
-// ==================================================
 function selecionar(nome) {
     const item = acharPlanilha(nome);
 
@@ -204,7 +174,6 @@ function selecionar(nome) {
 
     selecionada = nome;
 
-    // A página Limpeza lê "planilhaAtual", então copiamos para lá
     try {
         localStorage.setItem("planilhaAtual", JSON.stringify({
             nome: item.nome,
@@ -218,13 +187,9 @@ function selecionar(nome) {
     desenharTudo();
 }
 
-
-// ==================================================
-// 6. DESENHAR A LISTA DE PLANILHAS
-// ==================================================
 function desenharTabela() {
     corpoTabela.innerHTML = "";
-    semPlanilhas.hidden = planilhas.length > 0;   // mostra o aviso se a lista está vazia
+    semPlanilhas.hidden = planilhas.length > 0;
 
     planilhas.forEach(function (item) {
         const tr = document.createElement("tr");
@@ -234,7 +199,6 @@ function desenharTabela() {
             tr.classList.add("selecionada");
         }
 
-        // Estrutura da linha (os textos entram depois com textContent, por segurança)
         tr.innerHTML =
             '<td class="celula-nome"><img src="' + ICONE_EXCEL + '" class="mini-excel" alt=""><span class="nome"></span></td>' +
             '<td class="tam"></td>' +
@@ -249,8 +213,6 @@ function desenharTabela() {
         tr.querySelector(".nome").textContent = item.nome;
         tr.querySelector(".tam").textContent = formatarTamanho(item.tamanho);
         tr.querySelector(".data").textContent = item.data;
-
-        // Botão de status: "Ativo" (verde) ou "Inativo" (cinza)
         const botaoStatus = tr.querySelector(".status");
         botaoStatus.textContent = item.ativo ? "Ativo" : "Inativo";
 
@@ -258,13 +220,10 @@ function desenharTabela() {
             botaoStatus.classList.add("inativo");
         }
 
-        // ----- Cliques -----
-        // Clicar na linha seleciona a planilha
         tr.addEventListener("click", function () {
             selecionar(item.nome);
         });
 
-        // stopPropagation() evita que o clique no botão também selecione a linha
         botaoStatus.addEventListener("click", function (evento) {
             evento.stopPropagation();
             alternarStatus(item.nome);
@@ -289,37 +248,27 @@ function desenharTabela() {
     });
 }
 
-
-// ==================================================
-// 7. AÇÕES DOS BOTÕES
-// ==================================================
 function alternarStatus(nome) {
     const item = acharPlanilha(nome);
-    item.ativo = !item.ativo;     // vira o contrário: true ↔ false
+    item.ativo = !item.ativo; 
     salvarLista();
     desenharTudo();
 }
 
 function baixarPlanilha(nome) {
     const item = acharPlanilha(nome);
-
-    // Monta um arquivo Excel novo com os dados guardados
     const aba = XLSX.utils.json_to_sheet(item.linhas);
     const livro = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(livro, aba, "Planilha1");
-
-    // Garante a extensão .xlsx no arquivo baixado
     XLSX.writeFile(livro, item.nome.replace(/\.xls$/i, ".xlsx"));
 }
 
 function renomearPlanilha(nome) {
     const item = acharPlanilha(nome);
-
-    // prompt() abre uma caixinha pedindo um texto
     let novoNome = prompt("Novo nome da planilha:", item.nome);
 
     if (novoNome === null) {
-        return;                    // o usuário clicou em Cancelar
+        return;              
     }
 
     novoNome = novoNome.trim();
@@ -329,7 +278,6 @@ function renomearPlanilha(nome) {
         return;
     }
 
-    // Se faltou a extensão, coloca .xlsx
     if (!/\.xlsx?$/i.test(novoNome)) {
         novoNome = novoNome + ".xlsx";
     }
@@ -342,7 +290,6 @@ function renomearPlanilha(nome) {
     item.nome = novoNome;
     salvarLista();
 
-    // Se era a selecionada, atualiza também a cópia usada pelas outras páginas
     if (selecionada === nome) {
         selecionar(novoNome);
     } else {
@@ -353,7 +300,7 @@ function renomearPlanilha(nome) {
 }
 
 function excluirPlanilha(nome) {
-    // confirm() abre uma caixinha com OK e Cancelar
+
     if (!confirm('Excluir a planilha "' + nome + '"?')) {
         return;
     }
@@ -364,7 +311,6 @@ function excluirPlanilha(nome) {
 
     salvarLista();
 
-    // Se era a selecionada, limpa também a cópia das outras páginas
     if (selecionada === nome) {
         selecionada = null;
         localStorage.removeItem("planilhaAtual");
@@ -374,10 +320,6 @@ function excluirPlanilha(nome) {
     mostrarSucesso("✔ Planilha excluída.");
 }
 
-
-// ==================================================
-// 8. CARDS, DETALHES E PRÉVIA
-// ==================================================
 function desenharCards() {
     const ativas = planilhas.filter(function (item) {
         return item.ativo;
@@ -386,16 +328,12 @@ function desenharCards() {
     document.getElementById("totalPlanilhas").textContent = planilhas.length;
     document.getElementById("totalAtivas").textContent = ativas;
     document.getElementById("totalInativas").textContent = planilhas.length - ativas;
-
-    // Espaço usado = tamanho do texto guardado no navegador
     const usado = JSON.stringify(planilhas).length;
     document.getElementById("espacoUsado").textContent = formatarTamanho(usado);
 }
 
 function desenharDetalhes() {
     const item = selecionada ? acharPlanilha(selecionada) : null;
-
-    // Sem planilha selecionada, esconde o painel e a prévia
     if (!item) {
         detalhes.hidden = true;
         caixaPrevia.hidden = true;
@@ -444,17 +382,12 @@ function desenharPrevia(item) {
     caixaPrevia.hidden = false;
 }
 
-
-// ==================================================
-// 9. JUNTAR TUDO E INICIAR
-// ==================================================
 function desenharTudo() {
     desenharCards();
     desenharTabela();
     desenharDetalhes();
 }
 
-// Ao abrir a página: se a planilha atual ainda existe na lista, já vem selecionada
 const atual = JSON.parse(localStorage.getItem("planilhaAtual") || "null");
 
 if (atual && acharPlanilha(atual.nome)) {

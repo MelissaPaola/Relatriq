@@ -2,8 +2,6 @@
   color: rgb(130, 0, 252);
 }
 
-
-
 .cards-container {
   display: flex; /*coloca os cards lado a lado*/
   flex-wrap: wrap; /* se não couber, passa para a linha de baixo*/
@@ -11,8 +9,6 @@
   margin-left: 75px; /* ajusta a distância do quadrado para a esquerda*/
   
 }
-
-
 
 .card {
   background-color: white; /*Cor do fundo dos quadrados*/
@@ -24,8 +20,6 @@
   transition: 0.5s; /*Aqui é para deixar o quadrado mais suave quando passar o mouse por cima*/
 }
 
-
-
 .card:hover{
     scale: 105%; /*Aqui é para aumentar o tamanho do quadrado quando passar o mouse por cima*/
     box-shadow: 
@@ -35,15 +29,11 @@
       rgb(130, 0, 252); /*Cor*/
 }
 
-
-
 .tilPrinc{ /*Esta classe é para deixar a frase "Planilhas carregadas" em negrito*/
 
     font-weight: bold; /*deixa a frase em negrito*/
     font-size: 18px; /*aqui é para aumentar o tamanho da frase*/
 }
-
-
 
 .plan{ /*Esta classe é para deixar a frase "3" e a "100%"em verde*/
 
@@ -51,15 +41,11 @@
   font-size: 25px; /*aqui é para aumentar o tamanho da frase*/
 }
 
-
-
 .lin{ /*Esta classe é para deixar a frase "41" e a "3" em vermelho*/
 
   color: red; /*deixa a frase em vermelho*/
   font-size: 25px; /*aqui é para aumentar o tamanho da frase*/
 }
-
-
 
 .caixaInfe {
     background-color: white; /*Cor do fundo dos quadrados*/
@@ -72,16 +58,12 @@
      transition: 0.5s; /*Aqui é para deixar o quadrado mais suave quando passar o mouse por cima*/
 }
 
-
-
 .texto{ /*Aqui é para ajustar o texto do resumo automático*/
 
   margin-left: 20px; /*Aqui é a distância do texto para a esquerda*/
   margin-top: -3px;
 
 }
-
-
 
 .caixaInfe:hover{
 
@@ -93,7 +75,6 @@
       rgb(130, 0, 252); /*Cor*/
 
 }
-
 
 .caixaSupe-fundo{
   display: flex; /*coloca os cards lado a lado*/
@@ -140,16 +121,12 @@
   pointer-events: none;
 }
 
-/* ========== BOTÃO EXPORTAR ========== */
-
-/* A div só posiciona: empurra o botão para a direita */
 .botaoexportar {
     display: flex;
     justify-content: flex-end;
     margin-top: 24px;
 }
 
-/* O botão em si */
 .btn-exportar {
     display: inline-flex;
     align-items: center;
@@ -166,13 +143,11 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Sobe um pouquinho ao passar o mouse */
 .btn-exportar:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(108, 92, 231, 0.45);
 }
 
-/* Desce ao clicar */
 .btn-exportar:active {
     transform: translateY(0);
 }
@@ -188,35 +163,28 @@
                                                                      RESPONSIVIDADE
    ================================================================================================================================================== */
 
-/* ---------- Menu hambúrguer: escondido no desktop ---------- */
 .menu-botao,
 .menu-fundo {
   display: none;
 }
 
-/* checkbox que controla o menu (invisível, mas acessível pelo teclado) */
 .menu-toggle {
   position: fixed;
   opacity: 0;
   pointer-events: none;
 }
 
-/* NOVO: imagens nunca passam do tamanho da caixa */
 .img {
   max-width: 100%;
   object-fit: contain;
 }
 
-
-/* ---------- Telas até 1600px (notebooks e monitores menores) ---------- */
 @media (max-width: 1600px) {
 
-  /* NOVO: serve de referência para o ícone de perfil */
   .conteudo {
     position: relative;
   }
 
-  /* NOVO: ícone de perfil fixo no canto, sem margens gigantes */
   .svgIcon {
     position: absolute;
     top: 20px;
@@ -230,30 +198,27 @@
     margin-right: 20px;
   }
 
-  /* Cards dividem a linha igualmente, em vez de largura fixa de 350px */
   .card {
     box-sizing: border-box;
     width: auto;
     flex: 1 1 220px;
   }
 
-  /* Caixas de cima: duas lado a lado, ocupando o espaço disponível */
   .caixaSupe {
     box-sizing: border-box;
     width: auto;
     flex: 1 1 320px;
     max-width: 720px;
-    height: auto; /* AJUSTADO: a altura acompanha o conteúdo */
+    height: auto;
   }
 
-  /* AJUSTADO: imagem se adapta à largura da caixa */
   .img {
     width: 100%;
     height: auto;
     max-height: 340px;
   }
 
-  /* Caixa de baixo: deixa de ter 1440px fixos */
+
   .caixaInfe {
     box-sizing: border-box;
     width: auto;
@@ -265,21 +230,18 @@
 }
 
 
-/* ---------- Tablets (até 1024px) ---------- */
+
 @media (max-width: 1024px) {
 
-  /* As caixas de cima passam a ocupar a linha inteira, uma embaixo da outra */
   .caixaSupe {
     flex: 1 1 100%;
     max-width: none;
   }
 }
 
-
-/* ---------- Celulares e tablets pequenos (até 768px) ---------- */
 @media (max-width: 768px) {
 
-  /* Botão das três barrinhas */
+
   .menu-botao {
     display: flex;
     position: fixed;
@@ -300,10 +262,10 @@
   }
 
   .menu-botao::before {
-    content: "\2630"; /* ☰ */
+    content: "\2630";
   }
 
-  /* Menu lateral vira uma gaveta que fica escondida e abre por cima do conteúdo */
+
   .menu {
     position: fixed !important;
     top: 0;
@@ -352,7 +314,6 @@
     color: #fff !important;
   }
 
-  /* Fundo escurecido atrás do menu aberto (clicar nele fecha o menu) */
   .menu-fundo {
     display: block;
     position: fixed;
@@ -364,7 +325,6 @@
     transition: opacity 0.3s;
   }
 
-  /* Estado "aberto" */
   .menu-toggle:checked ~ .menu {
     transform: translateX(0);
   }
@@ -379,7 +339,7 @@
   }
 
   .menu-toggle:checked ~ .menu-botao::before {
-    content: "\2715"; /* ✕ */
+    content: "\2715";
   }
 
   .menu-toggle:focus-visible ~ .menu-botao {
@@ -388,15 +348,13 @@
     box-shadow: 0 0 0 5px rgb(130, 0, 252);
   }
 
-  /* Conteúdo ocupa a tela toda (sem o espaço do menu lateral) */
   .conteudo {
     margin-left: 0 !important;
     width: 100% !important;
     box-sizing: border-box;
-    padding: 70px 20px 20px; /* espaço em cima para o botão do menu */
+    padding: 70px 20px 20px;
   }
 
-  /* NOVO: ícone de perfil alinhado com o botão do menu */
   .svgIcon {
     top: 12px;
     right: 12px;
@@ -410,7 +368,6 @@
     margin-right: 0;
   }
 
-  /* Um card por linha */
   .card {
     flex: 1 1 100%;
     height: auto;
@@ -418,13 +375,12 @@
   }
 
   .img {
-    max-height: 220px; /* AJUSTADO */
+    max-height: 220px;
   }
 
-  /* No toque não existe "hover", e o aumento de 105% causaria rolagem lateral */
   .card:hover,
   .caixaInfe:hover,
-  .caixaSupe:hover { /* NOVO: .caixaSupe estava faltando */
+  .caixaSupe:hover {
     scale: 100%;
   }
 
@@ -434,11 +390,11 @@
 }
 
 
-/* ---------- Celulares pequenos (até 480px) ---------- */
+
 @media (max-width: 480px) {
 
   .conteudo {
-    padding: 70px 15px 15px; /* AJUSTADO: mantém o espaço do botão do menu */
+    padding: 70px 15px 15px;
   }
 
   .card,
@@ -452,7 +408,7 @@
   }
 
   .tilQua {
-    font-size: 20px; /* NOVO */
+    font-size: 20px;
   }
 
   .plan,
@@ -461,11 +417,10 @@
   }
 
   .img {
-    max-height: 170px; /* AJUSTADO */
+    max-height: 170px;
   }
 }
 
-/* Celular: botão na largura toda, fácil de tocar */
 @media (max-width: 480px) {
 
     .botaoexportar {

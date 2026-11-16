@@ -1,15 +1,15 @@
-/* ================= BASE ================= */
+
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* ===================  Fonte só do título Relatriq ======================*/
+
 .logo {
     font-family: "Lobster Two", cursive;
     font-weight: 700;       /* 400 = normal, 700 = negrito */
-    font-style: italic;     /* troque por italic para o estilo inclinado */
+    font-style: italic;
 }
 
 body {
@@ -32,12 +32,12 @@ input {
 
 h1 { font-size: 28px; }
 
-/* ================= MENU LATERAL (computador) ================= */
+
 .menu {
     width: 220px;
     flex-shrink: 0;
     height: 100vh;
-    position: sticky;          /* o menu acompanha a rolagem */
+    position: sticky; 
     top: 0;
     align-self: flex-start;
     overflow-y: auto;
@@ -79,15 +79,14 @@ h1 { font-size: 28px; }
     border-radius: 999px;
 }
 
-/* Empurra o Login para o fim do menu */
 .menu .login {
     margin-top: auto;
 }
 
-/* ================= CONTEÚDO ================= */
+
 .conteudo {
     flex: 1;
-    min-width: 0;              /* deixa o conteúdo encolher sem estourar a tela */
+    min-width: 0;         
     padding: 30px;
 }
 
@@ -96,7 +95,6 @@ h1 { font-size: 28px; }
     margin-bottom: 20px;
 }
 
-/* Caixa branca (usada em todas as páginas) */
 .caixa {
     background-color: white;
     padding: 20px;
@@ -108,7 +106,6 @@ h1 { font-size: 28px; }
     margin-bottom: 12px;
 }
 
-/* Cabeçalho de página: título à esquerda, botões à direita */
 .topo-pagina {
     display: flex;
     justify-content: space-between;
@@ -117,7 +114,6 @@ h1 { font-size: 28px; }
     margin-bottom: 20px;
 }
 
-/* ================= BOTÕES ================= */
 .botao {
     display: inline-block;
     background-color: #6c5ce7;
@@ -146,7 +142,6 @@ h1 { font-size: 28px; }
     flex-wrap: wrap;
 }
 
-/* ================= TABELAS ================= */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -166,12 +161,10 @@ td {
     border-bottom: 1px solid #eef1fb;
 }
 
-/* Tabela larga ganha barra de rolagem em vez de estourar a página */
 .rolagem {
     overflow-x: auto;
 }
 
-/* ================= TEXTOS E CAMPOS ================= */
 .status {
     background-color: #d7f5e3;
     color: #15803d;
@@ -205,7 +198,6 @@ select {
     background-color: white;
 }
 
-/* Acessibilidade: contorno visível ao navegar pelo teclado */
 a:focus-visible,
 button:focus-visible,
 select:focus-visible,
@@ -219,7 +211,6 @@ label:focus-visible {
     outline-color: white;
 }
 
-/* ================= MENU HAMBÚRGUER: escondido no computador ================= */
 .menu-botao,
 .menu-fundo {
     display: none;
@@ -231,9 +222,18 @@ label:focus-visible {
     pointer-events: none;
 }
 
-/* ================= RESPONSIVO ================= */
+/* ==================================================================================================================================================
+                                                                     ATENÇÃO:                                       
+                                                        A PARTIR DAQUI É A RESPONSIVIDADE!!!!!
+                                                                   FAVOR NÃO MEXER
+================================================================================================================================================== */
 
-/* ----- Tablet: até 1100px ----- */
+/* ==================================================================================================================================================
+                                                                     RESPONSIVIDADE
+================================================================================================================================================== */
+
+
+
 @media (max-width: 1100px) {
 
     .menu {
@@ -246,10 +246,9 @@ label:focus-visible {
     }
 }
 
-/* ----- Até 768px: menu vira hambúrguer ----- */
+
 @media (max-width: 768px) {
 
-    /* Botão ☰ no canto da tela */
     .menu-botao {
         display: flex;
         position: fixed;
@@ -270,10 +269,9 @@ label:focus-visible {
     }
 
     .menu-botao::before {
-        content: "\2630";        /* ☰ */
+        content: "\2630";
     }
 
-    /* O menu vira uma gaveta escondida à esquerda */
     .menu {
         position: fixed;
         top: 0;
@@ -288,7 +286,6 @@ label:focus-visible {
         transition: transform 0.3s, visibility 0.3s;
     }
 
-    /* Fundo escuro atrás do menu aberto (clicar fecha) */
     .menu-fundo {
         display: block;
         position: fixed;
@@ -300,7 +297,6 @@ label:focus-visible {
         transition: opacity 0.3s;
     }
 
-    /* Menu aberto */
     .menu-toggle:checked ~ .menu {
         transform: translateX(0);
         visibility: visible;
@@ -325,36 +321,31 @@ label:focus-visible {
         box-shadow: 0 0 0 5px #8b3dff;
     }
 
-    /* Conteúdo ocupa a tela toda, com espaço em cima para o botão ☰ */
     .conteudo {
         width: 100%;
         padding: 70px 20px 20px;
     }
 }
 
-/* ----- Celular: até 650px ----- */
 @media (max-width: 650px) {
 
     h1 { font-size: 24px; }
 
-    /* Título em cima, botões embaixo */
     .topo-pagina {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    /* Alvos de toque maiores (mais fáceis de acertar com o dedo) */
     .botao {
         min-height: 44px;
     }
 
     select {
         min-height: 44px;
-        font-size: 16px;       /* evita o zoom automático do iPhone */
+        font-size: 16px;
     }
 }
 
-/* ----- Celular pequeno: até 480px ----- */
 @media (max-width: 480px) {
 
     .conteudo {
@@ -365,14 +356,12 @@ label:focus-visible {
         padding: 16px;
     }
 
-    /* Botões dos grupos ocupam a linha toda */
     .grupo-botoes .botao {
         flex: 1 1 100%;
         text-align: center;
     }
 }
 
-/* Para quem prefere sem animações */
 @media (prefers-reduced-motion: reduce) {
 
     .menu,
