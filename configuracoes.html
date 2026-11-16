@@ -9,17 +9,20 @@
 </head>
 
 <body>
-
+ <!-- Botão do menu (os 3 primeiros itens vêm ANTES do <aside>) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-botao" aria-label="Abrir ou fechar o menu"></label>
+    <label for="menu-toggle" class="menu-fundo"></label>
     <aside class="menu">
         <h2 class="logo">Relatriq</h2>
         <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="planilhas.html">Planilhas</a></li>
-            <li><a href="limpeza.html">Ferramentas de limpeza</a></li>
-            <li><a href="relatorio.html">Relatórios</a></li>
-            <li><a href="exportar.html">Exportar</a></li>
-            <li><a href="configuracoes.html" class="ativo">Configurações</a></li>
+            <a href="index.html">Início</a>
+            <a href="planilhas.html">Planilhas</a>
+            <a href="limpeza.html">Ferramentas de limpeza</a>
+            <a href="relatorio.html">Relatórios</a>
+            <a href="configuracoes.html" class="ativo">Configurações</a>
         </ul>
+            <a href="#" class="login">👤 Login</a>
     </aside>
 
     <main class="conteudo">
@@ -40,12 +43,12 @@
                 <select id="idioma">
                     <option>Português (Brasil)</option>
                     <option>English</option>
+<!--======FAZER A OPÇÃO DO LOGIN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!======-->
                 </select>
             </div>
         </div>
 
     </main>
-    <script src="main.js"></script>
-</body>
+    <script src="JS/main.js"></script>
 </body>
 </html>
