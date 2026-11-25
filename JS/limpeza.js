@@ -9,10 +9,10 @@ function lerPlanilhaAtual() {
     const texto = localStorage.getItem("planilhaAtual");
 
     if (texto) {
-        return JSON.parse(texto); 
+        return JSON.parse(texto);
     }
 
-    return null;                 
+    return null;
 }
 
 const dados = lerPlanilhaAtual();
@@ -46,7 +46,7 @@ function removerDuplicadas() {
         const chave = JSON.stringify(linha);
 
         if (jaVistas.has(chave)) {
-            return false;   
+            return false;
         }
 
         jaVistas.add(chave);
@@ -70,7 +70,7 @@ function textoParaNumero(texto) {
         return Number(t);
     }
 
-    return null; 
+    return null;
 }
 
 function converterTextosEmNumeros() {
@@ -113,11 +113,11 @@ function finalizar(quantidade, textoSucesso, textoNenhum) {
 
 function mostrarPrevia() {
     const total = dados.linhas.length;
-    const mostradas = Math.min(40, total);  
+    const mostradas = Math.min(40, total);
     tituloPrevia.textContent = "Prévia (" + mostradas + " linhas)";
     infoPlanilha.textContent =
         dados.nome + " — " + total + " linhas e " + dados.colunas.length + " colunas";
-    tabelaPrevia.innerHTML = "";  
+    tabelaPrevia.innerHTML = "";
     const cabecalho = document.createElement("tr");
 
     dados.colunas.forEach(function (coluna) {
@@ -158,7 +158,7 @@ document.getElementById("btnNumeros").addEventListener("click", function () {
 });
 
 if (dados === null) {
-    aviso.hidden = false;    
+    aviso.hidden = false;
 } else {
     conteudo.hidden = false;
     mostrarPrevia();

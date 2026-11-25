@@ -1,4 +1,3 @@
-
 const btnNova = document.getElementById("btnNova");
 const inputArquivo = document.getElementById("arquivo");
 const areaUpload = document.getElementById("areaUpload");
@@ -19,7 +18,7 @@ function carregarLista() {
     const texto = localStorage.getItem("listaPlanilhas");
 
     if (texto) {
-        return JSON.parse(texto); 
+        return JSON.parse(texto);
     }
 
     return [];
@@ -84,11 +83,11 @@ inputArquivo.addEventListener("change", function () {
         lerArquivo(arquivo);
     }
 
-    inputArquivo.value = ""; 
+    inputArquivo.value = "";
 });
 
 areaUpload.addEventListener("dragover", function (evento) {
-    evento.preventDefault();       
+    evento.preventDefault();
     areaUpload.classList.add("arrastando");
 });
 
@@ -97,7 +96,7 @@ areaUpload.addEventListener("dragleave", function () {
 });
 
 areaUpload.addEventListener("drop", function (evento) {
-    evento.preventDefault();   
+    evento.preventDefault();
     areaUpload.classList.remove("arrastando");
 
     const arquivo = evento.dataTransfer.files[0];
@@ -205,9 +204,9 @@ function desenharTabela() {
             '<td class="data"></td>' +
             '<td><button class="status" title="Clique para ativar ou desativar"></button></td>' +
             '<td>' +
-                '<button class="acao baixar" title="Baixar">⬇</button>' +
-                '<button class="acao editar" title="Renomear">✎</button>' +
-                '<button class="acao excluir" title="Excluir">🗑</button>' +
+            '<button class="acao baixar" title="Baixar">⬇</button>' +
+            '<button class="acao editar" title="Renomear">✎</button>' +
+            '<button class="acao excluir" title="Excluir">🗑</button>' +
             '</td>';
 
         tr.querySelector(".nome").textContent = item.nome;
@@ -250,7 +249,7 @@ function desenharTabela() {
 
 function alternarStatus(nome) {
     const item = acharPlanilha(nome);
-    item.ativo = !item.ativo; 
+    item.ativo = !item.ativo;
     salvarLista();
     desenharTudo();
 }
@@ -268,7 +267,7 @@ function renomearPlanilha(nome) {
     let novoNome = prompt("Novo nome da planilha:", item.nome);
 
     if (novoNome === null) {
-        return;              
+        return;
     }
 
     novoNome = novoNome.trim();

@@ -1,4 +1,3 @@
-
 (function () {
     const CHAVE = "relatriq-tema";
     const html = document.documentElement;
@@ -32,7 +31,7 @@
         const caixa = document.getElementById("tema");
 
         if (!caixa) {
-            return;     
+            return;
         }
 
         caixa.checked = html.classList.contains("escuro");
